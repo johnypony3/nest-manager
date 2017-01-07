@@ -33,7 +33,7 @@ def devVer() { return "4.3.0" }
 metadata {
 	definition (name: "${textDevName()}", namespace: "tonesto7", author: "DesertBlade") {
 
-		capability "Presence111 Sensor"
+		//capability "Presence Sensor"
 		capability "Sensor"
 		capability "Refresh"
 		capability "Health Check"
