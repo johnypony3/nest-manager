@@ -68,9 +68,9 @@ metadata {
 		valueTile("lastUpdatedDt", "device.lastUpdatedDt", width: 4, height: 1, decoration: "flat", wordWrap: true) {
 			state("default", label: 'Data Last Received:\n${currentValue}')
 		}
-		valueTile("lastUpdatedDt", "device.humidity", width: 4, height: 1, decoration: "flat", wordWrap: true) {
-			state("default", label: '${currentValue}')
-		}
+		//valueTile("lastUpdatedDt", "device.humidity", width: 4, height: 1, decoration: "flat", wordWrap: true) {
+		//	state("default", label: '${currentValue}')
+		//}
 		valueTile("apiStatus", "device.apiStatus", width: 2, height: 1, decoration: "flat", wordWrap: true) {
 			state "ok", label: "API Status:\nOK"
 			state "issue", label: "API Status:\nISSUE ", backgroundColor: "#FFFF33"
@@ -493,6 +493,6 @@ def getHtml() {
 	}
 }
 
-private def textDevName()   { return "Nest Presence${appDevName()}" }
+private def textDevName()   { return "Nest Humidity${appDevName()}" }
 private def appDevType()    { return false }
 private def appDevName()    { return appDevType() ? " (Dev)" : "" }
