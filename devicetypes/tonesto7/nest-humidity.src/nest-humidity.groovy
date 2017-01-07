@@ -33,7 +33,7 @@ def devVer() { return "4.3.0" }
 metadata {
 	definition (name: "${textDevName()}", namespace: "tonesto7", author: "DesertBlade") {
 
-		capability "Humidity Sensor"
+		capability "Presence Sensor"
 		capability "Sensor"
 		capability "Refresh"
 		capability "Health Check"
@@ -68,9 +68,6 @@ metadata {
 		valueTile("lastUpdatedDt", "device.lastUpdatedDt", width: 4, height: 1, decoration: "flat", wordWrap: true) {
 			state("default", label: 'Data Last Received:\n${currentValue}')
 		}
-		//valueTile("lastUpdatedDt", "device.humidity", width: 4, height: 1, decoration: "flat", wordWrap: true) {
-		//	state("default", label: '${currentValue}')
-		//}
 		valueTile("apiStatus", "device.apiStatus", width: 2, height: 1, decoration: "flat", wordWrap: true) {
 			state "ok", label: "API Status:\nOK"
 			state "issue", label: "API Status:\nISSUE ", backgroundColor: "#FFFF33"
@@ -81,7 +78,7 @@ metadata {
 		valueTile("devTypeVer", "device.devTypeVer",  width: 2, height: 1, decoration: "flat") {
 			state("default", label: 'Device Type:\nv${currentValue}')
 		}
-		htmlTile(name:"html", action: "getHtml", width: 6, height: 4, whitelist: ["raw.githubusercontent.com", "cdn.rawgit.com"])
+        htmlTile(name:"html", action: "getHtml", width: 6, height: 4, whitelist: ["raw.githubusercontent.com", "cdn.rawgit.com"])
 
 		main ("presence")
 		details ("presence", "nestPresence", "refresh", "html")
@@ -493,6 +490,6 @@ def getHtml() {
 	}
 }
 
-private def textDevName()   { return "Nest Humidity${appDevName()}" }
+private def textDevName()   { return "Nest Presence${appDevName()}" }
 private def appDevType()    { return false }
 private def appDevName()    { return appDevType() ? " (Dev)" : "" }
