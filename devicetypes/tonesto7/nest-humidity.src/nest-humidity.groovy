@@ -65,8 +65,11 @@ metadata {
 			state "auto-away", 	action: "setPresence", 	icon: "https://raw.githubusercontent.com/tonesto7/nest-manager/master/Images/Devices/pres_autoaway_icon.png"
 			state "unknown", 	action: "setPresence", 	icon: "st.unknown.unknown.unknown"
 		}
-		valueTile("lastUpdatedDt", "device.humidity", width: 4, height: 1, decoration: "flat", wordWrap: true) {
+		valueTile("lastUpdatedDt", "device.lastUpdatedDt", width: 4, height: 1, decoration: "flat", wordWrap: true) {
 			state("default", label: 'Data Last Received:\n${currentValue}')
+		}
+		valueTile("humidity", "device.humidity", width: 4, height: 1, decoration: "flat", wordWrap: true) {
+			state("default", label: 'Humidity:\n${currentValue}')
 		}
 		valueTile("apiStatus", "device.apiStatus", width: 2, height: 1, decoration: "flat", wordWrap: true) {
 			state "ok", label: "API Status:\nOK"
