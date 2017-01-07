@@ -21,6 +21,9 @@
         "presence": {
             "ver": "4.3.0"
         },
+        "humidity": {
+            "ver": "4.3.0"
+        },
         "weather": {
             "ver": "4.3.0"
         }
@@ -53,6 +56,9 @@
                 "ver": "2.3.0"
             },
             "presence": {
+                "ver": "4.3.0"
+            },
+            "humidity": {
                 "ver": "4.3.0"
             },
             "weather": {
